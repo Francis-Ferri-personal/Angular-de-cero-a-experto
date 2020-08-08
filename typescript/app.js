@@ -1,12 +1,21 @@
 "use strict";
 (function () {
     var mensaje = "Hola";
-    // var mensaje = "Hola";
-    var constante = "Adios"; // Las constantes pesan menos en memoria porque no tiene funciones extras
-    var URL_DB = "url-db"; // Se usa con mayusculas cuando son variables globales por convencion
-    if (true) {
-        var mensaje_1 = "Mundo";
-        // var mensaje = "Mundo";
-    }
-    console.log(mensaje);
+    var numero = 123;
+    //numero = "123"; // error
+    var booleano = true;
+    var hoy = new Date();
+    var cualquierCosa;
+    cualquierCosa = mensaje;
+    cualquierCosa = numero;
+    cualquierCosa = booleano;
+    cualquierCosa = hoy;
+    var spiderman = {
+        nombre: "Peter",
+        edad: 30
+    };
+    spiderman = {
+        nombre: "Juan",
+        edad: 40
+    };
 })();
