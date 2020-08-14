@@ -1,4 +1,13 @@
+
+function imprimirConsola(constructorClase: Function){
+    console.log(constructorClase); 
+}
+
+
+
+@imprimirConsola
 export class Xman{
+    
     constructor(
         public nombre: string,
         public clave: string
