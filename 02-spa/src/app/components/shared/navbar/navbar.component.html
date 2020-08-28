@@ -33,9 +33,11 @@
       </ul>
 
 
-      <form class="form-inline my-2 my-lg-0">
+      <!-- Para arreglar este problema tuve que cambiar el form por div asi no habia envio involuntario -->
+
+      <div class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Buscar héroe" aria-label="Search" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
         <button  (click)="buscarHeroe(buscarTexto.value)" class="btn btn-outline-primary my-2 my-sm-0" type="button">Buscar</button>
-      </form>
+      </div>
     </div>
   </nav>
