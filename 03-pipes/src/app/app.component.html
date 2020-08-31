@@ -36,6 +36,26 @@
           <td> slice:1:5</td>
           <td> {{arreglo | slice:1:5}}</td>
         </tr>
+        <tr>
+          <td> {{PI}} </td>
+          <td> number (defecto) </td>
+          <td> {{PI | number}}</td>
+        </tr>
+        <tr>
+          <td> {{PI}} </td>
+          <td> number (0 decimales)</td>
+          <td> {{PI | number: "1.0-0"}}</td>
+        </tr>
+        <tr>
+          <td> {{PI}} </td>
+          <td> number (n enteros)</td>
+          <td> {{PI | number: "3.0-0"}}</td>
+        </tr>
+        <tr>
+          <td> {{PI}} </td>
+          <td> number (2 decimales)</td>
+          <td> {{PI | number: ".0-2"}}</td>
+        </tr>
       </tbody>
     </table>
     <h4>Slice</h4>
