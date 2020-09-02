@@ -11,6 +11,14 @@ export class AppComponent {
   PI: number = Math.PI;
   porcentaje: number = 0.234;
   salario: number = 1234.5
+
+  valorPromesa = new Promise<string>((res, rej)=> { 
+      setTimeout(() => {
+        //rej("llego la data");
+        res("llego la data");
+      }, 4500);
+  });
+
   heroe = {
     nombre: "Logan",
     clave: "Wolverine",
