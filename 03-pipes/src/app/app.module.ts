@@ -3,11 +3,13 @@ import { AppComponent } from './app.component';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import '@angular/common/locales/global/es';
 import '@angular/common/locales/global/fr';
+import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CapitalizadoPipe
   ],
   imports: [
     BrowserModule
