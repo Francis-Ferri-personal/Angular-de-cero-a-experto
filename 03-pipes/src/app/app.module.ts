@@ -4,12 +4,14 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import '@angular/common/locales/global/es';
 import '@angular/common/locales/global/fr';
 import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CapitalizadoPipe
+    CapitalizadoPipe,
+    DomseguroPipe
   ],
   imports: [
     BrowserModule
