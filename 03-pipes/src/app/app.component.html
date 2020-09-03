@@ -153,13 +153,13 @@
         <tr>
           <td> {{nombre}} </td>
           <td> 
-            contrasena:{{activar}}
+            contrasena: {{activar}}
             <br>
             <button (click)="activar=!activar" class="btn btn-outline-primary">
               Activar/Desactivar
             </button>
           </td>
-          <td> {{ nombre | contrasena:activar}}</td>
+          <td> {{ nombre | contrasena: activar}}</td>
         </tr>
 
       </tbody>
