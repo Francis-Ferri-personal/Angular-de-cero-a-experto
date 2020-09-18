@@ -23,7 +23,11 @@ export class SpotifyService {
       return this.getQuery("browse/new-releases?limit=15").pipe(map( data => data["albums"].items));
   }
 
-  getArtista( termino: string){
+  getArtistas( termino: string){
     return this.getQuery(`search?q=${termino}&type=artist&limit=15`).pipe(map( data => data["artists"].items));
+  }
+  
+  getArtista( id: string){
+    return this.getQuery(`artists/${id}`);
   }
 }
