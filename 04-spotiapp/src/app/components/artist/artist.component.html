@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row m-5">
     <div class="col">
         <table class="table">
             <thead>
@@ -37,7 +37,9 @@
                     <td>{{track.album.name}}</td>
                     <td>{{track.name}}</td>
                     <td>
-                        <audio [src]="track.preview_url" controls></audio>
+                        <!-- <audio [src]="track.preview_url" controls></audio> -->
+                        <!-- spotify:track:0tgVpDi06FyKpA1z0VMD4v -->
+                        <iframe [src]="track.uri.split(':')[2] | domseguro" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </td>
                 </tr>
             </tbody>
