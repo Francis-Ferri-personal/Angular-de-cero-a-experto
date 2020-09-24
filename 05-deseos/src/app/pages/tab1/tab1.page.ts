@@ -7,7 +7,7 @@ import { DeseosService } from '../../services/deseos.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
-  constructor(private deseosService: DeseosService) {}
+  
+  constructor(public deseosService: DeseosService) { }
 
 }

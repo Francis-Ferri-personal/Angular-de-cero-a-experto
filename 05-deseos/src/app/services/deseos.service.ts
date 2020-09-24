@@ -9,6 +9,8 @@ export class DeseosService {
   listas: Lista[] = [];
 
   constructor() { 
-    console.log("Servico inicializado");
+    const lista1 = new Lista("Recolectar piedras del inmnfinitp");
+    const lista2 = new Lista("heroes a desaparecer");
+    this.listas.push(lista1, lista2);
   }
 }
