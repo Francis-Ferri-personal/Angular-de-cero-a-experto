@@ -54,10 +54,5 @@ export class Tab1Page {
     });
     await alert.present();
   }
-
-  listaSeleccionada(lista: Lista){
-    const url = ["/tabs","tab1","agregar", lista.id];
-    this.router.navigate(url);
-  }
-
+  
 }
