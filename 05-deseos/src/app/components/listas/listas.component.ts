@@ -30,4 +30,8 @@ export class ListasComponent implements OnInit {
     this.router.navigate(url);
   }
 
+  borrarLista(lista: Lista){
+    this.deseosService.borrarLista(lista);
+  }
+
 }

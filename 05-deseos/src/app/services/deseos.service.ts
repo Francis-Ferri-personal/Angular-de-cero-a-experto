@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
 import { Lista } from '../models/lista.model';
 
@@ -19,6 +20,11 @@ export class DeseosService {
     this.guardarStorage();
 
     return nuevaLista.id;
+  }
+
+  borrarLista(lista: Lista){
+    this.listas = this.listas.filter(listaData => lista.id !== listaData.id );
+    this.guardarStorage();
   }
 
   obtenerLista(id: string | number){
