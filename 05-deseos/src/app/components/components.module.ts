@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListasComponent } from './listas/listas.component';
 import { IonicModule } from '@ionic/angular';
 import { DeseosService } from '../services/deseos.service';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 
@@ -12,7 +13,8 @@ import { DeseosService } from '../services/deseos.service';
   ],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    PipesModule
   ],
   exports: [
     ListasComponent
