@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// Import the module from the SDK
+import { AuthModule } from '@auth0/auth0-angular';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -18,7 +21,11 @@ import { PreciosComponent } from './components/precios/precios.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule.forRoot({
+      domain: 'dev-psjaogjc.us.auth0.com',
+      clientId: 'q1TrgzQ6VUFEh1k3mRWPNAsHWTUOdreG'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
