@@ -13,10 +13,16 @@
         </li>
       </ul>
       <span class="navbar-text">
-        <button *ngIf="!auth.isAuthenticated$;" class="btn btn-outline-primary">
+        <button 
+          class="btn btn-outline-primary" 
+          *ngIf="!(auth.isAuthenticated$ | async);"
+          (click)="auth.loginWithRedirect()">
           Ingresar
         </button>
-        <button *ngIf="auth.isAuthenticated$;" class="btn btn-outline-danger">
+        <button 
+          class="btn btn-outline-danger" 
+          *ngIf="auth.isAuthenticated$ | async;"
+          (click)="auth.logout({ returnTo: document.location.origin })">
           Salir
         </button>
       </span>
