@@ -14,6 +14,7 @@ import { AuthService } from '../../services/auth.service';
 export class RegistroComponent implements OnInit {
 
   usuario: UsuarioModel;
+  recordarme = true;
 
   constructor(
     private authService: AuthService,
@@ -37,7 +38,10 @@ export class RegistroComponent implements OnInit {
     this.authService.nuevoUsuario(this.usuario).subscribe(
       res => {
         console.log(res);
-        Swal.close()
+        Swal.close();
+        if(this.recordarme){
+          localStorage.setItem("email", this.usuario.email);
+        }
         this.router.navigateByUrl("/home");
       },
       error => {
