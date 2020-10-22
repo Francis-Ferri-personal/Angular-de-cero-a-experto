@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { UsuarioModel } from '../../models/usuario.model';
 import { AuthService } from '../../services/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -20,6 +22,13 @@ export class LoginComponent implements OnInit {
 
   login(form: NgForm){
     if(form.invalid){return;}
+
+    Swal.fire({
+      allowOutsideClick: false, 
+      text: "Espere por favor...",
+      icon: "info"
+    });
+    
     this.authService.login(this.usuario).subscribe(
       resp => {
         console.log(resp);
