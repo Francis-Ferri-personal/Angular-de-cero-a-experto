@@ -28,6 +28,14 @@ export class ReactiveComponent implements OnInit {
   get correoNoValido(){
     return this.forma.get('correo').invalid && this.forma.get('correo').touched;
   }
+  
+  get distritoNoValido(){
+    return this.forma.get('direccion.distrito').invalid && this.forma.get('direccion.distrito').touched;
+  }
+  
+  get ciudadNoValida(){
+    return this.forma.get('direccion.ciudad').invalid && this.forma.get('direccion.ciudad').touched;
+  }
 
   crearFormulario(){
     this.forma = this.formBuilder.group({
@@ -45,6 +53,11 @@ export class ReactiveComponent implements OnInit {
   guardar(){
     if(this.forma.invalid){
       return Object.values(this.forma.controls).forEach(control => {
+        if(control instanceof FormGroup){
+          Object.values(control.controls).forEach(control =>  control.markAsTouched())
+        } else{
+          control.markAsTouched();
+        }
         control.markAsTouched();
       })
     };
