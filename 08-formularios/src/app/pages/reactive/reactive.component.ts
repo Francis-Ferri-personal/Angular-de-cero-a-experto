@@ -12,6 +12,7 @@ export class ReactiveComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) { 
     this.crearFormulario();
+    this.cargarDataAlFormulario();
   }
 
   ngOnInit(): void {
@@ -50,6 +51,20 @@ export class ReactiveComponent implements OnInit {
     });
   }
 
+  cargarDataAlFormulario(){
+    // Todos los campos deben tener un valor, si quieres un valor vacio envia solo comillas
+    //this.forma.setValue({
+    this.forma.reset({
+      nombre: "Francis",
+      apellido: "Ferri",
+      correo: "francisferri@gmail.com",
+      direccion: {
+        distrito: "Atahualpa",
+        ciudad: "Quito"
+      }     
+    })
+  }
+
   guardar(){
     if(this.forma.invalid){
       return Object.values(this.forma.controls).forEach(control => {
@@ -61,6 +76,11 @@ export class ReactiveComponent implements OnInit {
         control.markAsTouched();
       })
     };
+    // Posteo de informacion
+    this.forma.reset({
+      nombre: "Sin nombre",
+    });
   }
+
 
 }
