@@ -45,6 +45,16 @@ export class ReactiveComponent implements OnInit {
   get ciudadNoValida(){
     return this.forma.get('direccion.ciudad').invalid && this.forma.get('direccion.ciudad').touched;
   }
+  
+  get pass1NoValida(){
+    return this.forma.get('pass1').invalid && this.forma.get('pass1').touched;
+  }
+
+  get pass2NoValida(){
+    const pass1 = this.forma.get("pass1").value;
+    const pass2 = this.forma.get("pass2").value;
+    return (pass1 === pass2)? false : true;
+  }
 
   crearFormulario(){
     this.forma = this.formBuilder.group({
@@ -52,11 +62,15 @@ export class ReactiveComponent implements OnInit {
       nombre: ["", [Validators.required, Validators.minLength(5)]],
       apellido: ["", [this.validadores.noHerrera, Validators.required, Validators.minLength(5)]],
       correo: ["", [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")]],
+      pass1: ["", [Validators.required]],
+      pass2:["", [Validators.required]],
       direccion: this.formBuilder.group({
         distrito: ["", Validators.required],
         ciudad: ["", Validators.required]
       }),
-      pasatiempos: this.formBuilder.array([])
+      pasatiempos: this.formBuilder.array([])    
+    },{
+      validators: [this.validadores.passwordsIguales("pass1", "pass2")]
     });
   }
 
