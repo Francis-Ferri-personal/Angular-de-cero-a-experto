@@ -16,14 +16,15 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this._chatService.cargarMensajes().subscribe(
-      (mensajes: any[]) => {
-        console.log(mensajes);
-      }
+      
     );
   }
 
   enviar_mensaje(){
-    console.log(this.mensaje);
+    if (this.mensaje.length === 0){ return; }
+    this._chatService.agregarMensaje(this.mensaje)
+      .then(() => {this.mensaje = ""})
+      .catch((error) => {console.error("Error al enviar", error)});
   }
 
 }
