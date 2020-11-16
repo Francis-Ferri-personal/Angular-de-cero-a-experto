@@ -4,6 +4,7 @@ import { Mensaje } from '../interface/mensaje.interface';
 import { map } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import firebase from 'firebase/app';
+import { ThrowStmt } from '@angular/compiler';
 
 
 @Injectable({
@@ -30,9 +31,15 @@ export class ChatService {
   }
 
   login(proveedor: string) {
-    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    if(proveedor === "google"){
+      this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    } else {
+      this.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+    }
   }
+
   logout() {
+    this.usuario = {};
     this.auth.signOut();
   }
 
